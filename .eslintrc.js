@@ -3,13 +3,15 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: [
-    "plugin:vue/vue3-essential",
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-  ],
+  extends: ["plugin:vue/vue3-essential", "eslint:recommended"],
   parserOptions: {
     parser: "@babel/eslint-parser",
+    requireConfigFile: false,
+    ecmaVersion: 2020,
+    sourceType: "module",
+    babelOptions: {
+      presets: ["@babel/preset-env", "@vue/babel-preset-app"],
+    },
   },
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
